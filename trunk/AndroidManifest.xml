@@ -16,5 +16,7 @@
         </activity>
         <activity android:name=".Map"
                   android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".PubList"
+        android:theme="@android:style/Theme.NoTitleBar"/>
     </application>
 </manifest>
