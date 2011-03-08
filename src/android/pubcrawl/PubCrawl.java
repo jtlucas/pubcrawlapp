@@ -26,7 +26,7 @@ public class PubCrawl extends TabActivity {
                       .setContent(intent);
         tabHost.addTab(spec);
      // Create an Intent to launch an Activity for the tab (to be reused)
-        intent = new Intent().setClass(this, Map.class);
+        intent = new Intent().setClass(this, PubList.class);
         // Initialize a TabSpec for each tab and add it to the TabHost
         spec = tabHost.newTabSpec("artists").setIndicator("Artists",
                           res.getDrawable(R.drawable.icon))
