@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/pubRefresh"
+    android:title="Update Database" />
+  <item android:id="@+id/zipCode"
+    android:title="Use Zip Code" />
+  <item android:id="@+id/currentLoc"
+    android:title="Use Current Location" />
+</menu>
