@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:gravity="center|fill">
+  <TextView
+    android:id="@+id/pubName"
+    android:layout_width="fill_parent"
+    android:layout_height="50px"
+    android:layout_centerInParent="true"
+    android:textStyle="bold"
+    android:gravity="fill|center"/>
+  <TextView
+    android:id="@+id/pubDescriptionTag"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Pub Description:"
+    android:textStyle="bold"/>
+  <TextView
+    android:id="@+id/pubDescription"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"/>
+  <TextView
+    android:id="@+id/pubLocationTag"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Pub Location:"
+    android:textStyle="bold"/>
+  <TextView
+    android:id="@+id/pubLocation"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"/>
+  <TextView
+    android:id="@+id/pubRatingTag"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Pub Rating:"
+    android:textStyle="bold"/>
+  <TextView
+    android:id="@+id/pubRating"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"/>
+  <Button
+    android:id="@+id/addRemove"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="asdf"/>
+</LinearLayout>
