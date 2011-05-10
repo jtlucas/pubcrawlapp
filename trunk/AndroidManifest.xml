@@ -4,6 +4,8 @@
       android:versionCode="1"
       android:versionName="1.0">
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <application android:icon="@drawable/icon" android:label="@string/app_name">
     <uses-library android:name="com.google.android.maps" />
     <activity android:name=".PubCrawl"
@@ -30,5 +32,7 @@
         android:theme="@android:style/Theme.Dialog"/>
     <activity android:name=".Settings"
         android:theme="@android:style/Theme.NoTitleBar"/>
+        <service android:name=".services.CellService"/>
+        <service android:name=".services.GpsService"/>
   </application>
 </manifest>
