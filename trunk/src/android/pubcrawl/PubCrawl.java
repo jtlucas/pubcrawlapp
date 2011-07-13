@@ -32,7 +32,7 @@ public class PubCrawl extends TabActivity {
 
     TextView text = (TextView) dialog.findViewById(R.id.responsibleText);
     StringBuilder welcomeText = new StringBuilder();
-    welcomeText.append("Remeber: \n");
+    welcomeText.append("Remember: \n");
     welcomeText.append("\"Drunk Driving, Over the Limit. Under Arrest\"");
     welcomeText.append(" - MADD\n\n");
     welcomeText.append("\"You Drink, You Drive, You Lose\" - NHTSA\n\n");
