@@ -70,16 +70,16 @@ public class GpsService extends Service {
 
     @Override
     public void onLocationChanged(Location loc) {
-      locManager.removeUpdates(locListener);
+//      locManager.removeUpdates(locListener);
       LocationDB db = new LocationDB(conText);
       db.addGpsEvent(loc);
-      try {
-        Thread.sleep(3000);
-      } catch (Exception e) {
-        Log.v(TAG, e.getMessage());
-      }
-      locManager.requestLocationUpdates(
-              LocationManager.GPS_PROVIDER, 0, 0, locListener);
+//      try {
+//        Thread.sleep(3000,0);
+//      } catch (Exception e) {
+//        Log.v(TAG, e.getMessage());
+//      }
+//      locManager.requestLocationUpdates(
+//              LocationManager.GPS_PROVIDER, 0, 0, locListener);
     }
 
     @Override
