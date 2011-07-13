@@ -1,5 +1,6 @@
 package android.pubcrawl;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.TabActivity;
 import android.content.Intent;
@@ -25,12 +26,10 @@ public class PubCrawl extends TabActivity {
     setContentView(R.layout.tabmain);
     Log.v(TAG, "setContentView Finished");
 
-    Dialog dialog = new Dialog(this);
+    AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 
-    dialog.setContentView(R.layout.startup);
     dialog.setTitle("Welcome to Pub Crawl!");
 
-    TextView text = (TextView) dialog.findViewById(R.id.responsibleText);
     StringBuilder welcomeText = new StringBuilder();
     welcomeText.append("Remember: \n");
     welcomeText.append("\"Drunk Driving, Over the Limit. Under Arrest\"");
@@ -38,7 +37,8 @@ public class PubCrawl extends TabActivity {
     welcomeText.append("\"You Drink, You Drive, You Lose\" - NHTSA\n\n");
     welcomeText.append("Please drink responsibly!\n\n");
     welcomeText.append("Enjoy!");
-    text.setText(welcomeText);
+    dialog.setMessage(welcomeText.toString());
+    dialog.setNeutralButton("Ok", null);
     dialog.show();
 
     Resources res = getResources(); // Resource object to get Drawables
