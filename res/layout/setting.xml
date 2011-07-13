@@ -5,6 +5,11 @@
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
   android:gravity="center|fill">
+  <TextView
+    android:id="@+id/textSettings"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Services:"/>
   <Button
     android:id="@+id/actionGPS"
     android:layout_width="fill_parent"
@@ -15,4 +20,14 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:text="StartStop Cell Service"/>
+  <TextView 
+    android:id="@+id/textSpace"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text=" "/>
+  <Button
+    android:id="@+id/actionABOUT"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="About Pub Crawl"/>
 </LinearLayout>

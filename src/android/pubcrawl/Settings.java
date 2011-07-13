@@ -18,6 +18,7 @@ public class Settings extends Activity implements OnClickListener {
   private static final String TAG = Settings.class.getSimpleName();
   private Button actionGPS;
   private Button actionCELL;
+  private Button actionABOUT;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class Settings extends Activity implements OnClickListener {
 
     actionGPS = (Button)  findViewById(R.id.actionGPS);
     actionCELL = (Button) findViewById(R.id.actionCELL);
+    actionABOUT = (Button) findViewById(R.id.actionABOUT);
 
     reDrawButtons();
 
@@ -60,10 +62,12 @@ public class Settings extends Activity implements OnClickListener {
 
     actionGPS.setOnClickListener(this);
     actionCELL.setOnClickListener(this);
+    actionABOUT.setOnClickListener(this);
   }
 
   public void onClick(View view) {
     Log.v(TAG, "onClick Started!");
+    AlertDialog.Builder dialog = new AlertDialog.Builder(this);
     ServiceDB db = new ServiceDB(this.getApplicationContext());
     String stat = "";
     ServiceElement service = null;
@@ -74,7 +78,7 @@ public class Settings extends Activity implements OnClickListener {
         if (stat == null
                 || stat.equalsIgnoreCase(ServiceDB.STATUSOPT.STOPPED.toString())) {
           startService(new Intent(this, GpsService.class));
-          AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+          
           StringBuilder GPSwarning = new StringBuilder();
           GPSwarning.append("Turning on the GPS Service will drastically ");
           GPSwarning.append("reduce your battery power. \n\n");
@@ -100,6 +104,18 @@ public class Settings extends Activity implements OnClickListener {
           stopService(new Intent(this, CellService.class));
           actionCELL.setText("Start Cellular Location Service");
         }
+        break;
+      case R.id.actionABOUT:
+        StringBuilder aboutDialog = new StringBuilder();
+        aboutDialog.append("Built by: Jesse T. Lucas\n");
+        aboutDialog.append("Released on: 7/12/2011\n");
+        aboutDialog.append("Build: 1.0.0\n\n");
+        aboutDialog.append("Having issues please email:");
+        aboutDialog.append("pubcrawl.android@gmail.com");
+        dialog.setTitle("About Pub Crawl");
+        dialog.setMessage(aboutDialog.toString());
+        dialog.setNeutralButton("Ok", null);
+        dialog.show();
         break;
     }
   }
