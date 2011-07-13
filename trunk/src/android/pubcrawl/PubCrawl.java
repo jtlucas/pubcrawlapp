@@ -86,6 +86,8 @@ public class PubCrawl extends TabActivity {
     ServiceDB db = new ServiceDB(this);
     db.addService(PubCrawl.class.getSimpleName(),
             ServiceDB.STATUSOPT.STOPPED.name());
+    stopService(new Intent(this, GpsService.class));
+    stopService(new Intent(this, CellService.class));
     super.onDestroy();
   }
 }
