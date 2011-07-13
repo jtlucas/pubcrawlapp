@@ -1,6 +1,7 @@
 package android.pubcrawl;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.pubcrawl.database.ServiceDB;
@@ -52,9 +53,9 @@ public class Settings extends Activity implements OnClickListener {
     stat = service.getStatus();
     if (stat == null
             || stat.equalsIgnoreCase(ServiceDB.STATUSOPT.STOPPED.toString())) {
-      actionCELL.setText("Start Cell Service");
+      actionCELL.setText("Start Cellular Location Service");
     } else if (stat.equalsIgnoreCase(ServiceDB.STATUSOPT.STARTED.toString())) {
-      actionCELL.setText("Stop Cell Service");
+      actionCELL.setText("Stop Cellular Location Service");
     }
 
     actionGPS.setOnClickListener(this);
@@ -73,6 +74,15 @@ public class Settings extends Activity implements OnClickListener {
         if (stat == null
                 || stat.equalsIgnoreCase(ServiceDB.STATUSOPT.STOPPED.toString())) {
           startService(new Intent(this, GpsService.class));
+          AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+          StringBuilder GPSwarning = new StringBuilder();
+          GPSwarning.append("Turning on the GPS Service will drastically ");
+          GPSwarning.append("reduce your battery power. \n\n");
+          GPSwarning.append("Please turn off GPS Service when not needed.");
+          dialog.setTitle("GPS Warning!");
+          dialog.setMessage(GPSwarning.toString());
+          dialog.setNeutralButton("Ok", null);
+          dialog.show();
           actionGPS.setText("Stop GPS Service");
         } else if (stat.equalsIgnoreCase(ServiceDB.STATUSOPT.STARTED.toString())) {
           stopService(new Intent(this, GpsService.class));
@@ -85,10 +95,10 @@ public class Settings extends Activity implements OnClickListener {
         if (stat == null
                 || stat.equalsIgnoreCase(ServiceDB.STATUSOPT.STOPPED.toString())) {
           startService(new Intent(this, CellService.class));
-          actionCELL.setText("Stop Cell Service");
+          actionCELL.setText("Stop Cellular Location Service");
         } else if (stat.equalsIgnoreCase(ServiceDB.STATUSOPT.STARTED.toString())) {
           stopService(new Intent(this, CellService.class));
-          actionCELL.setText("Start Cell Service");
+          actionCELL.setText("Start Cellular Location Service");
         }
         break;
     }
