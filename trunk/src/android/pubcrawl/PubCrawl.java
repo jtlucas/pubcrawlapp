@@ -41,9 +41,6 @@ public class PubCrawl extends TabActivity {
     text.setText(welcomeText);
     dialog.show();
 
-    startService(new Intent(this, CellService.class));
-    stopService(new Intent(this, GpsService.class));
-
     Resources res = getResources(); // Resource object to get Drawables
     TabHost tabHost = getTabHost();  // The activity TabHost
     TabHost.TabSpec spec;  // Resusable TabSpec for each tab
