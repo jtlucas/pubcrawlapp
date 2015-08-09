@@ -1,0 +1,1 @@
+This is a simple application that will allow you to plan and map a pub crawl route.
